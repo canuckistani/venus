@@ -4,4 +4,10 @@ cache
 *.pluginc
 *.pyc
 *.swp
+jetpack/output/*.xml
+jetpack/output/*.html
+jetpack/output/images
+jetpack/output/*.css
+jetpack/output/*.js
+
 
