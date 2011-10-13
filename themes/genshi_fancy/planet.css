@@ -27,8 +27,6 @@ h2 {
 	font-family: "Bitstream Vera Sans", sans-serif;
 	font-weight: normal;
 	color: #200080;
-
-	margin-left: -20px;
 }
 
 h3 {
@@ -148,3 +146,33 @@ a:hover {
 	text-decoration: underline !important;
 	color: blue !important;
 }
+
+
+h3 {
+    background-color: inherit;
+    border: none;
+}
+
+body {
+    border-right: none;
+    margin-right: 0px;
+}
+
+
+body * {
+    font-family: 'Open Sans',Arial,sans-serif;
+}
+
+div.entrygroup {
+    background-color: #efefef;
+    padding: 8px;
+}
+
+div.sidebar {
+    position: relative;
+}
+
+
+
+
+

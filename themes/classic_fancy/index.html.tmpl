@@ -25,6 +25,8 @@
 <h1><TMPL_VAR name></h1>
 <TMPL_VAR admin>
 
+<div id="main">
+
 <TMPL_LOOP Items>
 <TMPL_IF new_date>
 <TMPL_UNLESS __FIRST__>
@@ -50,7 +52,7 @@
 ### doesn't know about the "face", "facewidth" and "faceheight" configuration
 ### variables, but makes them available to us anyway.
 
-<h3><a href="<TMPL_VAR channel_link ESCAPE="HTML">" title="<TMPL_VAR channel_title_plain ESCAPE="HTML">"><TMPL_VAR channel_name></a></h3>
+<!--<h3><a href="<TMPL_VAR channel_link ESCAPE="HTML">" title="<TMPL_VAR channel_title_plain ESCAPE="HTML">"><TMPL_VAR channel_name></a></h3>-->
 <TMPL_IF channel_face>
 <img class="face" src="images/<TMPL_VAR channel_face ESCAPE="HTML">" width="<TMPL_VAR channel_facewidth ESCAPE="HTML">" height="<TMPL_VAR channel_faceheight ESCAPE="HTML">" alt="">
 </TMPL_IF>
@@ -85,10 +87,44 @@
 </div>
 </TMPL_IF>
 </TMPL_LOOP>
-
+</div>
 
 <div class="sidebar">
-<img src="images/logo.png" width="136" height="136" alt="">
+
+<!-- twitter block: http://twitter.com/about/resources/widgets/widget_profile   -->
+<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'profile',
+  rpp: 10,
+  interval: 30000,
+  width: 250,
+  height: 300,
+  theme: {
+    shell: {
+      background: '#333333',
+      color: '#ffffff'
+    },
+    tweets: {
+      background: '#000000',
+      color: '#ffffff',
+      links: '#4aed05'
+    }
+  },
+  features: {
+    scrollbar: true,
+    loop: false,
+    live: true,
+    hashtags: true,
+    timestamp: true,
+    avatars: false,
+    behavior: 'all'
+  }
+}).render().setUser('mozillajetpack').start();
+</script>
+
+
 
 <h2>Subscriptions</h2>
 <ul>
@@ -99,28 +135,12 @@
 </TMPL_LOOP>
 </ul>
 
-<p>
 <strong>Last updated:</strong><br>
 <TMPL_VAR date><br>
 <em>All times are UTC.</em><br>
-<br>
-Powered by:<br>
-<a href="http://www.planetplanet.org/"><img src="images/planet.png" width="80" height="15" alt="Planet" border="0"></a>
-</p>
 
-<p>
-<h2>Planetarium:</h2>
-<ul>
-<li><a href="http://www.planetapache.org/">Planet Apache</a></li>
-<li><a href="http://planet.freedesktop.org/">Planet freedesktop.org</a></li>
-<li><a href="http://planet.gnome.org/">Planet GNOME</a></li>
-<li><a href="http://planet.debian.net/">Planet Debian</a></li>
-<li><a href="http://planet.fedoraproject.org/">Planet Fedora</a></li>
-<li><a href="http://planets.sun.com/">Planet Sun</a></li>
-<li><a href="http://www.planetplanet.org/">more...</a></li>
-</ul>
-</p>
 </div>
+
 </body>
 
 </html>

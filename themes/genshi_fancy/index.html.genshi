@@ -14,7 +14,7 @@
 -->
 
 <head>
-<title>$feed.config.name</title>
+<title>Booo! $feed.config.name</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="generator" content="$feed.generator"/>
 <link rel="stylesheet" href="planet.css" type="text/css"/>
@@ -24,6 +24,7 @@
 </head>
 
 <body>
+
 <h1>$feed.config.name</h1>
 
 <py:for each="entry in entries">
@@ -52,7 +53,7 @@
 
 </py:for>
 
-<div class="sidebar">
+<div class="sidebar" id="sidebar">
 <img src="images/logo.png" width="136" height="136" alt=""/>
 
 <h2>Subscriptions</h2>
